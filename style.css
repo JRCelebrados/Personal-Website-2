@@ -1,0 +1,212 @@
+body {
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  /* height: 100%; */
+}
+
+h1 {
+  text-align: center;
+}
+
+#header-banner {
+  width: 100%;
+  height: 180px;
+  background-image: url("images/header-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0px -90px;
+}
+
+header {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin-top: -72px;
+  /* position: fixed; */
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media(max-width: 1280px) {
+
+  .container {
+    width: 100%;
+    padding: 0 1em;
+  }
+
+}
+
+.logo {
+  width: 114px;
+  height: 61px;
+  float: left;
+  padding: 7px 0;
+}
+
+.nav {
+  float: right;
+}
+
+.nav .nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding: 25px 0;
+  position: relative;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  color: #C0C0C0;
+  font-weight: bold;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #C0C0C0;
+  position: absolute;
+  width: 0;
+  top: 0;
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+.profile-pic {
+  float: left;
+  margin-right: 20px;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+}
+
+footer {
+  width: 100%;
+}
+
+
+.copyright {
+  float: left;
+}
+
+.social-media-icons {
+  float: right;
+}
+
+div i {
+  padding-left: 10px;
+}
+
+/* ARTWORK */
+
+.image-gallery {
+  margin: 2em 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 1.5rem;
+  grid-template-areas:
+                      'girl-with-lion-cub buddha buddha'
+                      'girl-with-lion-cub buddha buddha'
+                      'girl-with-lion-cub athena athena'
+                      'ride-of-the-valkyries ride-of-the-valkyries arrival-at-valhalla'
+                      'ride-of-the-valkyries ride-of-the-valkyries arrival-at-valhalla'
+  ;
+}
+
+.image-gallery a {
+  width: 100%;
+  height: 25rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.image-gallery a i {
+  /* color: rgba(255, 255, 255, .6); */
+  font-size: 3rem;
+  position: relative;
+  z-index: 100;
+  padding: 1rem 3rem;
+  border: 2px solid rgba(255, 255, 255, .6);
+  border-radius: .4rem;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+.image-gallery a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, .8);
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+.image-gallery a:hover i,
+.image-gallery a:hover::before {
+  opacity: 1;
+}
+
+.girl-with-lion-cub {
+  grid-area: girl-with-lion-cub;
+  min-height: 102.5rem;
+  background-image: url("images/artwork/girl-with-lion-cub.jpg");
+}
+
+.buddha {
+  grid-area: buddha;
+  min-height: 51.5rem;
+  background-image: url("images/artwork/Buddha.jpg");
+}
+
+.athena {
+  grid-area: athena;
+  min-height: 49.5rem;
+  background-image: url("images/artwork/Athena.jpg");
+}
+
+.ride-of-the-valkyries {
+  grid-area: ride-of-the-valkyries;
+  min-height: 51.5rem;
+  background-image: url("images/artwork/ride-of-the-valkyries.jpg");
+}
+
+.arrival-at-valhalla {
+  grid-area: arrival-at-valhalla;
+  min-height: 51.5rem;
+  background-image: url("images/artwork/arrival-at-valhalla.jpg");
+}
