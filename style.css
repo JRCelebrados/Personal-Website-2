@@ -27,6 +27,10 @@ header {
   background-color: black;
 }
 
+main {
+  background-color: white;
+}
+
 .home-header {
 
 }
@@ -39,7 +43,8 @@ header {
 
 .container {
   width: 80%;
-  margin: auto;
+  margin: 0 auto;
+  margin-bottom: 1em;
 }
 
 @media (max-width: 1200px) {
@@ -97,12 +102,6 @@ nav a:hover {
   padding: 18px 7px 7px 0;
 }
 
-/* .welcome-page {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-} */
-
 .welcome {
   height: inherit;
   text-align: center;
@@ -115,10 +114,11 @@ nav a:hover {
   top: 30%;
 }
 
+/* SLIDESHOWS */
+
 .slideshow {
   width: 100%;
   height: 100vh;
-  top: 0;
   position: relative;
   overflow: hidden;
 }
@@ -131,18 +131,18 @@ nav a:hover {
   animation: cycleImages 31s infinite;
 }
 
-.one {
+.first {
   background-image: url("images/artwork/ride-of-the-valkyries.jpg");
   background-size: cover;
 }
 
-.two {
+.second {
   background-image: url("images/artwork/Athena.jpg");
   background-size: cover;
 }
 
-.three {
-  background-image: url("images/artwork/Buddha.jpg");
+.third {
+  background-image: url("images/Artwork/Buddha.jpg")
 }
 
 @keyframes cycleImages {
@@ -166,10 +166,140 @@ nav a:hover {
   animation-delay: 20s;
 }
 
-/* .profile-pic {
-  float: left;
-  margin-right: 1em;
-} */
+/* END OF SLIDES */
+
+
+/* WORKS */
+
+.gallery {
+  display: grid;
+  max-width: 100%;
+  min-height: 700px;
+  grid-gap: 10px;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: 1fr 1fr .2fr .1fr .5fr 1fr 1fr;
+  grid-template-areas:
+    "one one two two two three three three"
+    "one one two two two three three three"
+    "one one two two two three three three"
+    "one one five five five three three three"
+    "four four five five five three three three"
+    "four four five five five three three three"
+    "four four five five five three three three";
+  font-family: 'Poppins', sans-serif;
+}
+
+@media only screen and (max-width: 550px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    min-height: 3000px;
+    grid-auto-rows: 1fr 0.3fr 0.7fr 0.5fr 1fr 0.8fr 0.3fr 1fr 0.7fr;
+    grid-template-areas:
+      "one"
+      "one"
+      "two"
+      "two"
+      "three"
+      "three"
+      "four"
+      "four"
+      "five";
+  }
+}
+
+.gallery a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  text-align: center;
+
+  z-index: 1;
+}
+
+.gallery a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity .5s;
+
+  z-index: -1;
+}
+
+.gallery a:hover::after {
+  opacity: 1;
+}
+
+.container a .image-caption {
+  opacity: 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity .5s;
+}
+
+.container a:hover .image-caption {
+  opacity: 1;
+}
+
+.image-caption-container {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.top-caption {
+  border-bottom: 2px solid #adadad;
+}
+
+.one {
+  background-color: red;
+  background-image: url("images/artwork/girl-with-lion-cub.jpg");
+  background-size: cover;
+  grid-area: one;
+  min-height: 370px;
+}
+
+.two {
+  background-color: orange;
+  background-image: url("images/artwork/Athena.jpg");
+  background-size: cover;
+  grid-area: two;
+  min-height: 330px;
+}
+
+.three {
+  background-color: yellow;
+  background-image: url("images/artwork/arrival-at-valhalla.jpg");
+  background-size: cover;
+  grid-area: three;
+  min-height: 330px;
+}
+
+.four {
+  background-color: green;
+  background-image: url("images/artwork/Buddha.jpg");
+  background-size: cover;
+  grid-area: four;
+  min-height: 330px;
+}
+
+.five {
+  background-color: blue;
+  background-image: url("images/artwork/ride-of-the-valkyries.jpg");
+  background-size: cover;
+  background-position: center;
+  grid-area: five;
+  min-height: 330px;
+}
+
+/* END OF WORKS*/
+
+
+/* ABOUT */
 
 .title {
   font-size: 36px;
@@ -201,6 +331,48 @@ nav a:hover {
     padding-left: 0;
   }
 }
+
+/* END OF ABOUT */
+
+/* CONTACT */
+
+.contact-info {
+  width: 80%;
+}
+
+.form-container {
+  background-color: blue;
+  max-width: 700px;
+  width: 100%;
+  padding: 1em;
+  margin: 0 auto;
+}
+
+
+.first-and-last-name {
+  display: flex;
+}
+
+.first-name-area {
+  width: 50%;
+}
+
+.last-name-area {
+  width: 50%;
+}
+
+input {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+}
+
+/* END OF CONTACT */
+
+/* FOOTER */
 
 footer {
   width: 100%;
@@ -245,36 +417,4 @@ i {
   padding: 0 4px;
 }
 
-.contact-info {
-  width: 80%;
-}
-
-.form-container {
-  background-color: blue;
-  max-width: 700px;
-  width: 100%;
-  padding: 1em;
-  margin: 0 auto;
-}
-
-
-.first-and-last-name {
-  display: flex;
-}
-
-.first-name-area {
-  width: 50%;
-}
-
-.last-name-area {
-  width: 50%;
-}
-
-input {
-  width: 100%;
-}
-
-textarea {
-  width: 100%;
-  height: 150px;
-}
+/* END OF FOOTER */
