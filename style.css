@@ -146,10 +146,10 @@ nav a:hover {
 }
 
 @keyframes cycleImages {
-  25% {
+  15% {
     opacity: 1;
   }
-  40% {
+  50% {
     opacity: 0;
   }
 }
@@ -163,6 +163,42 @@ nav a:hover {
 }
 
 .slideshow-item:nth-child(3) {
+  animation-delay: 20s;
+}
+
+.welcome {
+  color: white;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: change 31s infinite;
+}
+
+@keyframes change {
+  0% {
+    opacity: 0;
+    transform: scale3d(.5, .5, .5);
+    /* transform: scaleY(.5, .5, .5); */
+    /* transform: scaleX(.5, .5, .5); */
+  }
+  25% {
+    opacity: 1;
+    transform: scale3d(2, 2, 2);
+    /* transform: scaleY(1, 1, 1); */
+    /* transform: scaleX(1, 1, 1); */
+
+  }
+}
+
+.slideshow-item:nth-child(1) .welcome {
+  animation-delay: 0s;
+}
+
+.slideshow-item:nth-child(2) .welcome  {
+  animation-delay: 10s;
+}
+
+.slideshow-item:nth-child(3) .welcome  {
   animation-delay: 20s;
 }
 
@@ -413,8 +449,12 @@ footer {
   float: right;
 }
 
-i {
+.social-media-icons i {
   padding: 0 4px;
+}
+
+.social-media-icons i:hover {
+  transform: scale(1.1);
 }
 
 /* END OF FOOTER */
